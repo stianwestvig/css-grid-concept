@@ -1,5 +1,11 @@
 <template>
-  <nav></nav>
+  <nav>
+    <img
+      src="@/assets/logo.png"
+      alt="logo"
+      width="40"
+    />
+  </nav>
 </template>
 
 <script>
@@ -9,8 +15,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+$outer = 20px
+
 nav
-  height: 100%
+  height: "calc(100% - %s - %s)" % ($outer $outer)
   background-color: #070707
+  padding: $outer
 
 </style>

@@ -9,7 +9,6 @@
     <aside class="grid-menu">
       <c-menu />
     </aside>
-    <aside class="grid-aside"></aside>
   </div>
 </template>
 
@@ -28,33 +27,32 @@ export default {
 <style lang="stylus" scoped>
 .grid-container
   display: grid
-  grid-template-areas: "menu header header"\
-                       "menu content aside"
-  grid-template-columns: 80px 1fr 150px
+  min-height: 100vh
+  grid-template-areas: "menu header"\
+                       "menu content"
+  grid-template-columns: 80px 1fr
   grid-template-rows: 80px\
                       1fr
-  min-height: 100vh
-
-.grid-header
-  grid-area: header
-.grid-content
-  grid-area: content
-  background-color: #545454
-.grid-menu
-  grid-area: menu
-.grid-aside
-  grid-area: aside
 
 @media screen and (max-width: 600px)
   .grid-container
     grid-template-areas: "header"\
                          "menu"\
-                         "content"\
-                         "aside"
+                         "content"
     grid-template-columns: 100%
     grid-template-rows: 100px\
                         50px\
-                        1fr\
-                        50px
+                        1fr
+
+.grid-header
+  grid-area: header
+.grid-content
+  grid-area: content
+  background-color: #DCDCDD
+  padding: 20px
+.grid-menu
+  grid-area: menu
+.grid-aside
+  grid-area: aside
 
 </style>

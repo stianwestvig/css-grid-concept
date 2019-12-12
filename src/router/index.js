@@ -5,12 +5,16 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    redirect: '/work'
+  },
+  {
     path: '/work',
     name: 'work',
     component: () => import(/* webpackChunkName: "about" */ '../views/c-work.vue')
   },
   {
-    path: '/',
+    path: '/overview',
     name: 'overview',
     component: () => import(/* webpackChunkName: "about" */ '../views/c-overview.vue')
   }
