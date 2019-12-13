@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { uuidv4 } from '@/utils'
+import { uuidv4 } from '@/utils/maths.js'
 
 export default {
   name: 'CForm',

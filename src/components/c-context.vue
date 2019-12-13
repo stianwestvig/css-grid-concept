@@ -1,20 +1,28 @@
 <template>
   <div class="c-context">
     <h2>Set context</h2>
-    <p>todo: dynamisk legge til og fjerne flere context</p>
-    <label>Coupon code
-      <input
-        v-model="code"
-        type="text"
-        ref="first"
-        @blur="updateContext"
-      />
-    </label>
+    <!-- <p>todo: dynamisk legge til og fjerne flere context</p> -->
+
+    <div class="flex">
+      <label>Product
+        <input
+          v-model="code"
+          type="text"
+          @blur="updateContext"
+        />
+      </label>
+      <label>Producer
+        <input
+          v-model="org"
+          type="text"
+          tabindex="-1"
+        />
+      </label>
+    </div>
     <label>Name
       <input
         v-model="name"
         type="text"
-        ref="first"
         @blur="updateContext"
       />
     </label>
@@ -49,6 +57,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .flex
+    display: flex
+    margin-bottom: 10px
   .c-context
     padding-bottom: 20px
   h2

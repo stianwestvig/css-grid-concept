@@ -5,8 +5,8 @@
       :key="item.id"
     >
       <span>{{ formatTime(item) }}</span>
-      <span>{{ item.activity }}</span>
       <span>{{ item.context.name }}</span>
+      <span>{{ item.activity }}</span>
       <span>{{ item.context.code }}</span>
       <span>{{ item.context.org }}</span>
     </li>

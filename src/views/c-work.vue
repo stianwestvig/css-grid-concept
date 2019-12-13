@@ -10,6 +10,7 @@
 import CContext from '@/components/c-context.vue'
 import CForm from '@/components/c-form.vue'
 import CActivityList from '@/components/c-activity-list.vue'
+import { saveActivity, getAllActivity } from '@/utils/api.js'
 
 export default {
   name: 'CWork',
@@ -25,8 +26,14 @@ export default {
       this.context = context
     },
     handleSave (item) {
+      saveActivity(item)
       this.items.push(item)
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(async vm => {
+      vm.items = await getAllActivity()
+    })
   }
 }
 </script>
